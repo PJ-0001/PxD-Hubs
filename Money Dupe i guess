@@ -1,10 +1,12 @@
+local players = game:GetService("Players"):GetPlayers()
 
-    for _, player in ipairs(players) do
-        game.ReplicatedStorage.ACS_Engine.Eventos.Recarregar:FireServer(999999999, {
-            ["ACS_Modulo"] = {
-                ["Variaveis"] = {
-                    ["StoredAmmo"] = player.leaderstats.Contant
-                }
+
+for _, player in ipairs(players) do
+    game.ReplicatedStorage.ACS_Engine.Eventos.Recarregar:FireServer(999999999, {
+        ["ACS_Modulo"] = {
+            ["Variaveis"] = {
+                ["StoredAmmo"] = player.leaderstats.Contant
             }
-        })
-    end
+        }
+    })
+end
